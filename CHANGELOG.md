@@ -2,6 +2,29 @@
 
 Alla versioner av Blackbox. Installationsprogrammen finns i [Blackbox-releases](https://github.com/andahlberg/Blackbox-releases/releases). Från 0.2.3 kan en administratör uppdatera inifrån appen, under *Uppdatera* i menyn.
 
+## 0.2.6 – 2026-10-02
+
+### Rättat
+- **Overlayen är genomskinlig på riktigt.** Bara texten syns, och det som ligger under overlayen syns igenom. I 0.2.5 blev bakgrunden svart.
+- **En skadad lokal historik** läggs nu undan automatiskt som `history.skadad-<datum>.db`, och inspelningen fortsätter i en ny fil. Tidigare visades samma fel varje sekund. Den lokala historiken används när bakgrundstjänsten inte är installerad.
+
+### Ändrat
+- **Graferna är tomma där inget spelades in**, till exempel när datorn var avstängd eller sov. Tidigare ritades en linje på noll. Det gäller även kärnornas färgremsa.
+- **Tjänster:** starttypen visas som en färgad etikett.
+  - Automatisk: grön
+  - Manuell: blå
+  - Inaktiverad: orange
+  - Start: lila
+  - System: turkos
+  - Okänd: röd
+- **Hälsa** har två kolumner och mindre tom yta.
+  - Till vänster: tabellerna för uppstart och viloläge.
+  - Till höger: uppstartsgrafen, diskarnas hälsa och anslutningen som kompakta kort.
+- **Disk Analys** har mindre tom yta.
+  - Analysens nyckeltal står bredvid diskrutan.
+  - Sidopanelen visas bara när något är markerat.
+  - Tabellerna fördelar bredden bättre.
+
 ## 0.2.5 – 2026-10-02
 
 ### Säkerhet
