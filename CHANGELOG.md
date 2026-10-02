@@ -1,6 +1,34 @@
-# Ändringslogg
+﻿# Ändringslogg
 
 Alla versioner av Blackbox. Installationsprogrammen finns i [Blackbox-releases](https://github.com/andahlberg/Blackbox-releases/releases). Från 0.2.3 kan en administratör uppdatera inifrån appen, under *Uppdatera* i menyn.
+
+## 0.2.5 – 2026-10-02
+
+### Säkerhet
+Efter en säkerhetsgranskning av hela koden:
+- **Uppdateringen** laddas nu ner och kontrolleras av Blackbox egen bakgrundsdel med administratörsrätt, i en mapp som bara administratörer kan skriva i. Tidigare låg filen i användarens temp-mapp, där ett skadligt program kunde byta ut den medan frågan om administratörsbehörighet visades.
+- **Bakgrundstjänsten kraschar inte längre** av en fil med ett omöjligt datum eller av konstiga värden i Windows loggar. Tidigare kunde vem som helst stoppa inspelningen så.
+- **Falska händelser:** Application-loggen kan alla program skriva i. Från den sparas nu högst 300 händelser per källa och timme, och assistenten får veta att de kan vara förfalskade.
+- **Som administratör sparar appen ingenting i profilmappen** (tema, overlay och kolumnbredder gäller bara sessionen), och dumpfiler hamnar i `C:\Windows\Temp`.
+- **Privata mappar utanför `C:\Users`** syns inte längre med innehåll för andra användare i Disk Analys.
+- **Mindre rättningar:**
+  - Installationen stänger bara Blackbox egen process.
+  - Livedata återhämtar sig om något upptar dess namn.
+  - Bara riktiga versionsnummer godtas vid uppdatering.
+
+### Nytt
+- **Klicka på ett fynd i Översikt** för att öppna det i Diagnos, utfällt.
+- **Autostart:**
+  - Sortera på namn, utgivare, status, just nu eller plats.
+  - Status visas som en grön eller röd etikett.
+
+### Ändrat
+- **Overlayen** har ingen bakgrund och ingen ram, bara texten med en svag skugga.
+  - Valen ligger i en panel med kryssrutor, som öppnas bredvid overlayen och stannar kvar tills du klickar utanför.
+- **Diagnos:** tätare fyndkort.
+  - Orsakerna tar en rad var.
+  - Råden står under mätvärdena.
+  - Kolumnerna fyller bredden.
 
 ## 0.2.4 – 2026-10-01
 
